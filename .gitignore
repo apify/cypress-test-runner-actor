@@ -1,0 +1,7 @@
+.vscode
+
+storage
+node_modules
+cypress/videos
+cypress/reports
+cypress/screenshots

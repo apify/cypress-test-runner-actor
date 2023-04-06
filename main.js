@@ -83,7 +83,7 @@ for (const test of run.tests) {
     await dataset.pushData({
         title: test.title.join(' '),
         displayError: test.displayError,
-        state: test.state,
+        success: test.state === 'passed',
         duration,
         attempts: test.attempts.length,
         screenshotUrl: screenshotUrls[0],

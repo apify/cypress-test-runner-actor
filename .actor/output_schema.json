@@ -7,7 +7,7 @@
             "transformation": {
                 "fields": [
                     "title",
-                    "state",
+                    "success",
                     "duration",
                     "displayError",
                     "screenshotUrl"
@@ -19,8 +19,9 @@
                     "title": {
                         "label": "Test Title"
                     },
-                    "state": {
-                        "label": "State"
+                    "success": {
+                        "label": "Success",
+                        "format": "boolean"
                     },
                     "duration": {
                         "label": "Duration",

@@ -4,6 +4,13 @@
     "type": "object",
     "schemaVersion": 1,
     "properties": {
+        "specCode": {
+            "title": "Cypress spec code",
+            "type": "string",
+            "description": "Contents of cypress spec",
+            "editor": "javascript",
+            "prefill": ""
+        },
         "baseUrl": {
             "title": "Base url",
             "type": "string",

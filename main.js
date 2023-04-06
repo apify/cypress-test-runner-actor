@@ -27,7 +27,11 @@ await writeFile(specFilename, specCode, { encoding: 'utf-8' });
 const kvs = await Actor.openKeyValueStore();
 const dataset = await Actor.openDataset();
 
-const result = await cypress.run({ config: cypressConfig, spec: specFilename });
+const result = await cypress.run({
+    config: cypressConfig,
+    spec: specFilename,
+    browser: 'chrome',
+});
 
 // Save the full result as output
 await kvs.setValue('RESULT', result);

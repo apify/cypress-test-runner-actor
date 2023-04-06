@@ -30,7 +30,8 @@
                         "label": "Error"
                     },
                     "screenshotUrl": {
-                        "format": "link"
+                        "label": "Screenshot",
+                        "format": "image"
                     }
                 }
             }

@@ -9,7 +9,7 @@
             "type": "string",
             "description": "Contents of cypress spec",
             "editor": "javascript",
-            "prefill": "describe('spec', () => {\n    it('visits', () => {\n        cy.visit('https://example.com');\n    });\n});"
+            "prefill": "describe('spec', () => {\n    it('test that should succeed', () => {\n        cy.visit('/');\n        cy.get('h1').should('contain', 'Example Domain');\n    });\n\n     it('test that should fail', () => {\n        cy.visit('/');\n        cy.get('h1').should('contain', 'Some different text');\n    });\n});"
         },
         "baseUrl": {
             "title": "Base url",

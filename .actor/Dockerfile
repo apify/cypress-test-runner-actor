@@ -1,4 +1,4 @@
-FROM cypress/base:node18.12.0
+FROM cypress/base:18.12.0
 # cypress image entrypoint runs the tests right away
 # we want to run our own CMD
 ENTRYPOINT [""]

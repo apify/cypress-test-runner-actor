@@ -30,7 +30,7 @@ const dataset = await Actor.openDataset();
 const result = await cypress.run({
     config: cypressConfig,
     spec: specFilename,
-    browser: 'chrome',
+    // browser: 'chrome',
 });
 
 // Save the full result as output

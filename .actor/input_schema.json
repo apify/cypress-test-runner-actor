@@ -9,14 +9,14 @@
             "type": "string",
             "description": "Contents of cypress spec",
             "editor": "javascript",
-            "prefill": ""
+            "prefill": "describe('spec', () => {\n    it('visits', () => {\n        cy.visit('https://example.com');\n    });\n});"
         },
         "baseUrl": {
             "title": "Base url",
             "type": "string",
             "description": "Base url for the tests.",
             "editor": "textfield",
-            "prefill": "https://apify.com"
+            "prefill": "https://example.com"
         },
         "viewportWidth": {
             "title": "Viewport width",
@@ -47,5 +47,5 @@
             "description": "Record video of the test run which is then stored in KVS. Default is true."
         }
     },
-    "required": ["baseUrl"]
+    "required": ["baseUrl", "specCode"]
 }

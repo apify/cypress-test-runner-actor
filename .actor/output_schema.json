@@ -6,42 +6,30 @@
             "title": "Filtered output",
             "transformation": {
                 "fields": [
-                    "testSuiteTitle",
-                    "totalPassed",
-                    "totalPending",
-                    "totalFailed",
-                    "totalSkipped",
-                    "totalDuration",
-                    "videoLink"
+                    "title",
+                    "state",
+                    "duration",
+                    "displayError",
+                    "screenshotUrl"
                 ]
             },
             "display": {
                 "component": "table",
                 "properties": {
-                    "testSuiteTitle": {
-                        "label": "Test Suite Title"
+                    "title": {
+                        "label": "Test Title"
                     },
-                    "totalPassed": {
-                        "label": "Total Passed"
+                    "state": {
+                        "label": "State"
                     },
-                    "totalPending": {
-                        "label": "Total Pending",
+                    "duration": {
+                        "label": "Duration",
                         "format": "number"
                     },
-                    "totalFailed": {
-                        "label": "Total Failed",
-                        "format": "number"
+                    "displayError": {
+                        "label": "Error"
                     },
-                    "totalSkipped": {
-                        "label": "Total Skipped",
-                        "format": "number"
-                    },
-                    "totalDuration": {
-                        "label": "Total Duration",
-                        "format": "number"
-                    },
-                    "videoLink": {
-                        "label": "Video recording",
+                    "screenshotUrl": {
                         "format": "link"
                     }
                 }

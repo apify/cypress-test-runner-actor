@@ -92,13 +92,17 @@ for (const test of run.tests) {
     });
 }
 
-log.info('See dataset for results of individual tests', {
-    videoLink: run.video ? kvs.getPublicUrl('RECORDING') : undefined,
-    resultsLink: kvs.getPublicUrl('OUTPUT'),
-});
-
 if (!allTestsPassed) {
-    Actor.exit({ exitCode: 1, statusMessage: 'Some tests have failed' });
-}
+    await Actor.exit({ exitCode: 1, statusMessage: 'Some tests have failed' });
+} else {
+    const videoLink = run.video ? kvs.getPublicUrl('RECORDING') : undefined;
+    const resultsLink = kvs.getPublicUrl('OUTPUT');
 
-await Actor.exit();
+    Actor.setStatusMessage(`See results dashboard <${resultsLink}>`, { isStatusMessageTerminal: true });
+
+    log.info('See dataset for results of individual tests', {
+        videoLink,
+        resultsLink,
+    });
+    await Actor.exit();
+}

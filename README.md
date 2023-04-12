@@ -1,12 +1,25 @@
-# Cypress Test
-
 Run your Cypress tests on the Apify Platform effectively and easily. Just set up your test environment using a user-friendly UI and let the platform do the rest.
 
-## How to use
+## Features
 
-You can easily run your tests on Apify Platform, just copy-paste your test files into `Cypress -> e2e` folder. The tests' names need to end with `-spec.cy.js`.
+### Run your Cypress tests on the Apify Platform
 
-You can also customize the test run by specifying other options in the settings, e.g. the screen size, video recording or the default command timeout.
+<center>
+<img src="https://raw.githubusercontent.com/apify/cypress-test-runner-actor/main/docs/static/actor-settings.png" alt="Test configuration with simple UI">
+</center>
 
-After running the tests, the Apify Platform stores the results in a comprehensive way - datasets for json results, key value store for videos. You can view the results directly on the platform or download them to your local machine using a REST API.
+
+### Collect and analyze your test results online
+
+After running the tests, the Apify Platform stores the results in comprehensive datasets. You can view the results directly on the platform or download them to your local machine using a REST API.
+
+<center>
+<img src="https://raw.githubusercontent.com/apify/cypress-test-runner-actor/main/docs/static/results-dashboard.png" alt="Analyzing understandable test reports">
+</center>
+
+### How to use
+
+To run test suites, just copy-paste your generated test code into the *Cypress spec code* field in the Actor settings.
+
+You can also customize the test run by specifying other options in the settings, e.g. the screen size, default comand timeout, and video settings.
 

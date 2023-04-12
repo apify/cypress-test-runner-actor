@@ -92,17 +92,17 @@ for (const test of run.tests) {
     });
 }
 
-if (!allTestsPassed) {
-    await Actor.exit({ exitCode: 1, statusMessage: 'Some tests have failed' });
-} else {
-    const videoLink = run.video ? kvs.getPublicUrl('RECORDING') : undefined;
-    const resultsLink = kvs.getPublicUrl('OUTPUT');
+const videoLink = run.video ? kvs.getPublicUrl('RECORDING') : undefined;
+const resultsLink = kvs.getPublicUrl('OUTPUT');
 
-    Actor.setStatusMessage(`See results dashboard <${resultsLink}>`, { isStatusMessageTerminal: true });
+Actor.setStatusMessage(`See results dashboard <${resultsLink}>`, { isStatusMessageTerminal: true });
 
-    log.info('See dataset for results of individual tests', {
-        videoLink,
-        resultsLink,
-    });
-    await Actor.exit();
-}
+log.info('See dataset for results of individual tests', {
+    videoLink,
+    resultsLink,
+});
+
+await Actor.exit({
+    exitCode: allTestsPassed ? 0 : 1,
+    statusMessage: allTestsPassed ? undefined : 'Some tests have failed',
+});

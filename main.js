@@ -95,8 +95,6 @@ for (const test of run.tests) {
 const videoLink = run.video ? kvs.getPublicUrl('RECORDING') : undefined;
 const resultsLink = kvs.getPublicUrl('OUTPUT');
 
-Actor.setStatusMessage(`See results dashboard <${resultsLink}>`, { isStatusMessageTerminal: true });
-
 log.info('See dataset for results of individual tests', {
     videoLink,
     resultsLink,
@@ -104,5 +102,5 @@ log.info('See dataset for results of individual tests', {
 
 await Actor.exit({
     exitCode: allTestsPassed ? 0 : 1,
-    statusMessage: allTestsPassed ? undefined : 'Some tests have failed',
+    statusMessage: `See results dashboard <${resultsLink}>`,
 });

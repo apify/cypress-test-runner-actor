@@ -7,16 +7,29 @@
         "specCode": {
             "title": "Cypress spec code",
             "type": "string",
-            "description": "Contents of cypress spec",
+            "description": "Just copy paste your test code here and click on save and start",
             "editor": "javascript",
             "prefill": "describe('spec', () => {\n    it('test that should succeed', () => {\n        cy.visit('/');\n        cy.get('h1').should('contain', 'Example Domain');\n        cy.screenshot();\n    });\n\n     it('test that should fail', () => {\n        cy.visit('/');\n        cy.get('h1', { timeout: 1000 }).should('contain', 'Some different text');\n    });\n});"
         },
         "baseUrl": {
             "title": "Base url",
             "type": "string",
-            "description": "Base url for the tests.",
+            "description": "URL used as prefix for cy.visit() or cy.request() command's URL.",
             "editor": "textfield",
             "prefill": "https://example.com"
+        },
+        "defaultCommandTimeout": {
+            "title": "Default Command Timeout",
+            "type": "integer",
+            "description": "Maximum time the for the command to be executed. Default is `30000`.",
+            "default": 30000,
+            "sectionDescription": "These settings are not required for most use cases. Use them to customize or debug your test run."
+        },
+        "video": {
+            "title": "Record video",
+            "type": "boolean",
+            "default": true,
+            "description": "Record video of the test run which is then stored in Key Value Store. Default is true."
         },
         "viewportWidth": {
             "title": "Viewport width",
@@ -31,20 +44,6 @@
             "type": "integer",
             "description": "Viewport height in pixels. Default is `720`.",
             "default": 720
-        },
-        "defaultCommandTimeout": {
-            "title": "Default Command Timeout",
-            "type": "integer",
-            "description": "Maximum time the for the command to be executed. Default is `30000`.",
-            "default": 30000,
-            "sectionCaption": "Advanced settings",
-            "sectionDescription": "These settings are not required for most use cases. Use them to customize or debug your test run."
-        },
-        "video": {
-            "title": "Record video",
-            "type": "boolean",
-            "default": true,
-            "description": "Record video of the test run which is then stored in KVS. Default is true."
         }
     },
     "required": ["baseUrl", "specCode"]
